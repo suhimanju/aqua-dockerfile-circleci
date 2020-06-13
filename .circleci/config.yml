@@ -14,5 +14,5 @@ workflows:
       - microscanner/scan-image:
           requires:
             - docker-build
-          context: .
+          context: aquacontext
           image: 'suhimanju/aqua-dockerfile-circleci:v0.1'
