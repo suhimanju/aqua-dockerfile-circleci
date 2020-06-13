@@ -1,9 +1,7 @@
-FROM nginx
+#This is a sample Image 
+FROM ubuntu 
+MAINTAINER suhas.manju89@gmail.com 
 
-RUN rm /etc/nginx/conf.d/default.conf
-
-RUN rm /etc/nginx/conf.d/examplessl.conf
-
-COPY content /usr/share/nginx/html
-
-COPY conf /etc/nginx
+RUN apt-get update 
+RUN apt-get install –y nginx 
+CMD [“echo”,”Image created”] 
