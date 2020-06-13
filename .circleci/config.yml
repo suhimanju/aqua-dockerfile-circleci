@@ -14,7 +14,7 @@ workflows:
       - microscanner/scan-image:
           requires:
             - docker-build
-          - image: 'suhimanju89/aqua-dockerfile-circleci:v0.1'
-              auth:
-                username: mydockerhub-user  # can specify string literal values
-                password: $DOCKERHUB_PASSWORD  # or project UI env-var reference
+          image: 'suhimanju89/aqua-dockerfile-circleci:v0.1'
+            auth:
+              username: mydockerhub-user  # can specify string literal values
+              password: $DOCKERHUB_PASSWORD  # or project UI env-var reference
