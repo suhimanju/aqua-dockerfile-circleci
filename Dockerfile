@@ -1,7 +1,10 @@
 #This is a sample Image 
-FROM ubuntu 
-MAINTAINER suhas.manju89@gmail.com 
+FROM mongo:3.2.1
 
-RUN apt-get update 
-RUN apt-get install nginx -y
-CMD [“echo”,”Image created”] 
+ADD https://get.aquasec.com/microscanner /
+
+RUN chmod +x /microscanner
+
+ENV token=${AQUA_TOKEN}
+
+RUN /microscanner ${token}
