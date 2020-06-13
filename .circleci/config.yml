@@ -1,0 +1,18 @@
+version: 2.1
+orbs:
+  microscanner: aquasecurity/microscanner@0.1.6
+  jobs:
+  docker-build:
+    executor: microscanner/default
+    steps:
+      - checkout
+      - run: 'docker build -t suhimanju/aqua-dockerfile-circleci:v0.1 .'
+workflows:
+  scan-image:
+    jobs:
+      - docker-build
+      - microscanner/scan-image:
+          requires:
+            - docker-build
+          context: .
+          image: 'suhimanju/aqua-dockerfile-circleci:v0.1'
