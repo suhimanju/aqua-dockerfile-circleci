@@ -1,5 +1,5 @@
 #This is a sample Image 
-FROM mongo:3.2.1
+FROM mongo:latest
 
 ADD https://get.aquasec.com/microscanner /
 
