@@ -1,9 +1,10 @@
-FROM nginx
+#This is a sample Image 
+FROM mongo:3.2.1
 
-RUN rm /etc/nginx/conf.d/default.conf
+ADD https://get.aquasec.com/microscanner /
 
-RUN rm /etc/nginx/conf.d/examplessl.conf
+RUN chmod +x /microscanner
 
-COPY content /usr/share/nginx/html
+ENV token=${AQUA_TOKEN}
 
-COPY conf /etc/nginx
+RUN /microscanner ${token}
