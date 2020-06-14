@@ -10,7 +10,7 @@ jobs:
       - image: suhimanju89/aqua-dockerfile-circleci:v0.1
         auth:
           username: $DOCKER_USER  # can specify string literal values
-         password: $DOCKERHUB_PASSWORD  # or project environment variable reference
+          password: $DOCKERHUB_PASSWORD  # or project environment variable reference
 workflows:
   scan-image:
     jobs:
