@@ -6,7 +6,7 @@ jobs:
     executor: microscanner/default
     steps:
       - checkout
-      - run: 'docker build -t suhimanju89/aqua-dockerfile-circleci:v0.2 .'
+      - run: 'docker build -t suhimanju89/aqua-dockerfile-circleci:v0.1 .'
 workflows:
   scan-image:
     jobs:
@@ -15,4 +15,4 @@ workflows:
           requires:
             - docker-build
           dockerfile-path: $PWD
-          image: suhimanju89/aqua-dockerfile-circleci:v0.2
+          image: suhimanju89/aqua-dockerfile-circleci:v0.1
