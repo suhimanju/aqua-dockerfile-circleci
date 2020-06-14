@@ -6,7 +6,7 @@ jobs:
     executor: microscanner/default
     steps:
       - checkout
-      - run: 'docker build -t suhimanju89/aqua-dockerfile-circleci:v0.1 .'
+      - run: 'docker build --build-arg $AQUA_TOKEN -t suhimanju89/aqua-dockerfile-circleci:v0.1 .'
 workflows:
   scan-image:
     jobs:
