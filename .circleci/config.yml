@@ -14,5 +14,5 @@ workflows:
       - microscanner/scan-image:
           requires:
             - docker-build
+          dockerfile-path: $PWD
           image: suhimanju89/aqua-dockerfile-circleci:v0.2
-          dockerfile-path: .	
