@@ -14,4 +14,4 @@ workflows:
       - microscanner/scan-image:
           requires:
             - docker-build
-          image: alpine:latest
+          image: mongo:3.2.1
