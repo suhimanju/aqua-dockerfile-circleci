@@ -6,7 +6,7 @@ jobs:
     executor: microscanner/default
     steps:
       - checkout
-      - run: 'docker build -t suhimanju89/aqua-dockerfile-circleci:v0.2 .'
+      - run: 'docker build -t alpine:latest .'
 workflows:
   scan-image:
     jobs:
@@ -14,4 +14,4 @@ workflows:
       - microscanner/scan-image:
           requires:
             - docker-build
-          image: suhimanju89/aqua-dockerfile-circleci:v0.1
+          image: alpine:latest
